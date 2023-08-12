@@ -1,0 +1,17 @@
+.wheel {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(to right, aqua, white);
+    border-radius: 100%;
+    animation: spin .5s infinite forwards;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate3d(0deg);
+    }
+
+    to {
+        transform: rotate3d(360deg);
+    }
+}

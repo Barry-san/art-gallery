@@ -1,0 +1,8 @@
+@import url(./styles/reset.css);
+@import url(./styles/ui.css);
+@import url(./styles/navigation.css);
+@import url(./styles/loader.css);
+
+.app {
+  width: 100%;
+}
