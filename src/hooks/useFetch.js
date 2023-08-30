@@ -8,6 +8,9 @@ export function useFetch(endpoint) {
   useEffect(() => {
     const result = fetch(`${import.meta.env.VITE_BASE_URL}/${endpoint}`, {
       method: "GET",
+      headers: {
+        "AIC-User-Agent": "no-name-yet (oyeyemimubarak6@gmail.com)",
+      },
     });
     result
       .then((res) => {
