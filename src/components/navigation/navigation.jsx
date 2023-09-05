@@ -1,10 +1,18 @@
 import { Link } from "react-router-dom";
+import { navigation } from "../../utils/DOM/menu";
 
 function Navigation() {
   return (
     <nav>
-      logo
-      <div className="navlinks">
+      <span className="logo">Artsy</span>
+      <button
+        aria-label="navigation toggle"
+        className="navToggle"
+        onClick={navigation}
+      >
+        <span className="">Menu</span>
+      </button>
+      <div className="navlinks" aria-expanded="false">
         <Link to={"/artworks"}>Artworks</Link>
         <Link to={"/exhibitions"}>Exhibitions</Link>
         <Link to={"/artists"}>Artists</Link>

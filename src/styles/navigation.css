@@ -5,9 +5,80 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-collapse: collapse;
+    font-family: Sintony, sans-serif;
+}
+
+.logo {
+    font-family: Sintony;
+    font-size: 1rem;
 }
 
 .navlinks {
     display: flex;
     gap: 1rem;
+}
+
+.navlinks>a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1rem;
+    position: relative;
+}
+
+.navlinks>a::before {
+    content: " ";
+    height: 1px;
+    background-color: #000;
+    width: 0;
+    position: absolute;
+    top: 90%;
+    transition: .3s ease-out;
+}
+
+.navlinks>a:hover::before {
+    width: 100%;
+    transition: width .3s ease-out;
+}
+
+.navlinks>a:hover {
+    color: rgb(181, 9, 56);
+}
+
+
+
+.navToggle {
+    z-index: 1000;
+    height: 30px;
+    background-color: transparent;
+    visibility: hidden;
+}
+
+@media (max-width:720px) {
+    .navlinks {
+        flex-direction: column;
+        background-color: whitesmoke;
+        width: 60%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100dvh;
+        padding-top: 30%;
+        padding-inline: 1rem;
+        transition: transform .5s ease;
+    }
+
+
+
+    [aria-expanded="false"] {
+        transform: translateX(100%);
+    }
+
+    [aria-expanded="true"] {
+        transform: translateX(0);
+    }
+
+    .navToggle {
+        visibility: visible;
+    }
 }

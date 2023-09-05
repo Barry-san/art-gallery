@@ -1,14 +1,18 @@
+import React from "react";
+import Error from "../components/error";
 import Loader from "../components/loader";
 import { useFetch } from "../hooks/useFetch";
+import { ReactDOM } from "react-dom";
 
 function Exhibitions() {
   const { data, error, loading } = useFetch("exhibitions");
   return (
     <div className="artworks">
-      {error && console.log(error)}
+      {error && <Error />}
       {loading && <Loader />}
       <div className="grid">
         {data?.data.map((elem) => {
+          console.log(elem);
           return (
             <div className="flex" key={elem.id}>
               <img
@@ -20,10 +24,14 @@ function Exhibitions() {
                 }
                 alt={elem.title}
               />
-              <p key={elem.id}>
-                {elem.title} - {elem.artwork_type_title}
-              </p>
-              {elem.short_description}
+              <div className="text-box">
+                <p key={elem.id} className="title">
+                  {elem.title}
+                </p>
+                <div
+                  dangerouslySetInnerHTML={{ __html: elem.short_description }}
+                ></div>
+              </div>
             </div>
           );
         })}

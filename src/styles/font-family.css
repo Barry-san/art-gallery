@@ -1,0 +1,28 @@
+@font-face {
+    font-family: Sintony;
+    src: url(../assets/Sintony/Sintony-Regular.ttf);
+    font-weight: 400;
+    font-variant-ligatures: common-ligatures;
+}
+
+@font-face {
+    font-family: Sintony;
+    src: url(../assets/Sintony/Sintony-Bold.ttf);
+    font-weight: 800;
+    font-variant-ligatures: common-ligatures;
+}
+
+
+@font-face {
+    font-family: Poppins;
+    src: url(../assets/Poppins/Poppins-Regular.ttf);
+    font-weight: 400;
+    font-variant-ligatures: common-ligatures;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url(../assets/Poppins/Poppins-Bold.ttf);
+    font-variant-ligatures: common-ligatures;
+    font-weight: 800;
+}

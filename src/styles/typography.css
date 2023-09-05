@@ -1,0 +1,44 @@
+.title {
+    text-align: left;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    font-family: Sintony;
+    font-weight: 800;
+    text-decoration: underline;
+}
+
+p {
+    font-family: Poppins, sans-serif;
+}
+
+.text-box {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 1rem;
+    width: 100%;
+}
+
+.art_box {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    gap: 1rem;
+    width: min(400px, 100%);
+    padding: 1rem;
+    /* background-color: red; */
+}
+
+.category {
+    width: max(50%, 100px);
+    padding: 5px;
+    border: solid 1px grey;
+    border-radius: 1rem;
+}
+
+@media screen and (max-idth:720px) {
+    .title {
+        font-size: 18px;
+    }
+}

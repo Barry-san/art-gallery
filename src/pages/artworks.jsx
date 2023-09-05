@@ -1,3 +1,4 @@
+import Error from "../components/error";
 import Loader from "../components/loader";
 import { useFetch } from "../hooks/useFetch";
 
@@ -5,7 +6,7 @@ function Artworks() {
   const { data, error, loading } = useFetch("artworks");
   return (
     <div className="artworks">
-      {error && console.log(error)}
+      {error && <Error />}
       {loading ? <Loader /> : null}
       {data && console.log(data)}
       <div className="grid">
@@ -13,12 +14,21 @@ function Artworks() {
           return (
             <div className="flex" key={elem.id}>
               <img
+                srcSet={`
+                https://www.artic.edu/iiif/2/${elem.image_id}/full/600,/0/default.jpg 1200w,
+                https://www.artic.edu/iiif/2/${elem.image_id}/full/400,/0/default.jpg 820w,
+                        https://www.artic.edu/iiif/2/${elem.image_id}/full/200,/0/default.jpg 400w`}
                 src={`https://www.artic.edu/iiif/2/${elem.image_id}/full/400,/0/default.jpg`}
                 alt={elem.title}
               />
-              <p>
-                {elem.title} - {elem.artwork_type_title}{" "}
-              </p>
+              <div>
+                <div className="art_box">
+                  <p className="title">
+                    {elem.title} <em>by</em> <span>{elem.artist_title}</span>
+                  </p>
+                  <p className="category"> {elem.artwork_type_title}</p>
+                </div>
+              </div>
             </div>
           );
         })}
