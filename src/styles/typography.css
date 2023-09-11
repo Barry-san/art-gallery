@@ -23,11 +23,9 @@ p {
 .art_box {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     gap: 1rem;
     width: min(400px, 100%);
     padding: 1rem;
-    /* background-color: red; */
 }
 
 .category {
@@ -35,6 +33,10 @@ p {
     padding: 5px;
     border: solid 1px grey;
     border-radius: 1rem;
+}
+
+.artist_name {
+    text-transform: none;
 }
 
 @media screen and (max-idth:720px) {
