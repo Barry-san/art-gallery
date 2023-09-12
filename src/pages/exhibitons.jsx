@@ -2,7 +2,6 @@ import React from "react";
 import Error from "../components/error";
 import Loader from "../components/loader";
 import { useFetch } from "../hooks/useFetch";
-import { ReactDOM } from "react-dom";
 
 function Exhibitions() {
   const { data, error, loading } = useFetch("exhibitions");
