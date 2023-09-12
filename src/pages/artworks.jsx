@@ -8,7 +8,6 @@ function Artworks() {
     <div className="artworks">
       {error && <Error />}
       {loading ? <Loader /> : null}
-      {data && console.log(data)}
       <div className="grid">
         {data?.data.map((elem) => {
           return (

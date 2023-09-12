@@ -14,7 +14,7 @@ function Navigation() {
       >
         <span className="">Menu</span>
       </button>
-      <div className="navlinks" aria-expanded="false">
+      <div className="navlinks" aria-expanded="false" onBlur={navigation}>
         <Link to={"/artworks"}>Artworks</Link>
         <Link to={"/exhibitions"}>Exhibitions</Link>
         {/* <Link to={"/artists"}>Artists</Link> */}
