@@ -6,12 +6,15 @@ export function useFetch(endpoint) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const result = fetch(`${import.meta.env.VITE_BASE_URL}/${endpoint}`, {
-      method: "GET",
-      headers: {
-        "AIC-User-Agent": "no-name-yet (oyeyemimubarak6@gmail.com)",
-      },
-    });
+    const result = fetch(
+      `${import.meta.env.VITE_BASE_URL}/${endpoint}?limit=20`,
+      {
+        method: "GET",
+        headers: {
+          "AIC-User-Agent": "no-name-yet (oyeyemimubarak6@gmail.com)",
+        },
+      }
+    );
     result
       .then((res) => {
         setLoading(false);

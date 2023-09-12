@@ -1,8 +1,10 @@
-import { redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const navigator = useNavigate();
   function handleClick() {
-    redirect("/artworks");
+    navigator("/artworks");
+    console.log("button has been clicked");
   }
   return (
     <div className="home">
