@@ -4,7 +4,9 @@ import { navigation } from "../../utils/DOM/menu";
 function Navigation() {
   return (
     <nav>
-      <span className="logo">Artsy</span>
+      <Link to={"/"}>
+        <span className="logo">Artsy</span>
+      </Link>
       <button
         aria-label="navigation toggle"
         className="navToggle"
@@ -15,7 +17,7 @@ function Navigation() {
       <div className="navlinks" aria-expanded="false">
         <Link to={"/artworks"}>Artworks</Link>
         <Link to={"/exhibitions"}>Exhibitions</Link>
-        <Link to={"/artists"}>Artists</Link>
+        {/* <Link to={"/artists"}>Artists</Link> */}
         <Link to={"/about"}>About</Link>
       </div>
     </nav>
