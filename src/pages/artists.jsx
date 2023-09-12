@@ -9,7 +9,6 @@ function Artists() {
       {loading && <Loader />}
       {error && <Error />}
       {data?.data.map((elem) => {
-        console.log(elem);
         return (
           <div className="flex" key={elem.id}>
             <p>{elem.title}</p>

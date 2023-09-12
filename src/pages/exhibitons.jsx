@@ -11,7 +11,6 @@ function Exhibitions() {
       {loading && <Loader />}
       <div className="grid">
         {data?.data.map((elem) => {
-          console.log(elem);
           return (
             <div className="flex" key={elem.id}>
               <img
