@@ -13,22 +13,24 @@ function Exhibitions() {
         {data?.data.map((elem) => {
           return (
             <div className="flex" key={elem.id}>
-              <img
-                src={
-                  elem.image_url
-                    ? elem.image_url
-                    : `https://www.artic.edu/iiif/2/${elem.image_id}/full/400,/0/default.jpg
+              {(elem.image_id || elem.image_url) && (
+                <img
+                  src={
+                    elem.image_url
+                      ? elem.image_url
+                      : `https://www.artic.edu/iiif/2/${elem.image_id}/full/400,/0/default.jpg
 `
-                }
-                alt={elem.title}
-              />
+                  }
+                  alt={elem.title}
+                />
+              )}
               <div className="text-box">
                 <p key={elem.id} className="title">
                   {elem.title}
                 </p>
-                <div
-                  dangerouslySetInnerHTML={{ __html: elem.short_description }}
-                ></div>
+                <div>
+                  <p>{elem.short_description}</p>
+                </div>
               </div>
             </div>
           );
