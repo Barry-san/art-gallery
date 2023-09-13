@@ -23,8 +23,13 @@ function Artworks() {
               <div>
                 <div className="art_box">
                   <p className="title">
-                    {elem.title} <em>by</em>{" "}
-                    <span className="artist_name">{elem.artist_title}</span>
+                    {elem.title}
+                    {elem.artist_title && (
+                      <span className="artist_name">
+                        {" "}
+                        - {elem.artist_title}
+                      </span>
+                    )}
                   </p>
                   <p className="category"> {elem.artwork_type_title}</p>
                 </div>
