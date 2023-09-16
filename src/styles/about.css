@@ -1,0 +1,22 @@
+.about_container {
+    display: grid;
+    place-content: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    justify-content: space-around;
+}
+
+.about {
+    display: flex;
+}
+
+.about_links>ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    gap: 1rem;
+    border: 1px solid black;
+    margin: 0px;
+    padding: 0;
+}
