@@ -1,7 +1,8 @@
 // import { } from "/art_gallery.svg";
 import { useNavigate } from "react-router-dom";
 
-function Home() {
+function Home({ prop }) {
+  console.log(prop);
   const navigator = useNavigate();
   function handleClick() {
     navigator("/artworks");

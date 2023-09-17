@@ -47,3 +47,26 @@
         width: 30px;
     }
 }
+
+.pagination {
+    display: flex;
+    /* width: 100%; */
+    align-items: center;
+    justify-content: center;
+    /* background-color: red; */
+    margin: auto;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.pagination button {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 5px 1rem;
+    font-family: poppins, sans-serif;
+    border: 1px solid gray;
+}
+
+.pagination input {
+    width: 30px;
+}

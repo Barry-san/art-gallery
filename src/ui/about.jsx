@@ -1,6 +1,7 @@
 function About() {
   return (
     <div className="about_container">
+      <h1>Artsy!</h1>
       <div className="about">
         <p>
           Artsy is a project born from my interest in coding, and a desire to

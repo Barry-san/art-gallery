@@ -1,9 +1,20 @@
+import { useState } from "react";
 import Error from "../components/error";
 import Loader from "../components/loader";
 import { useFetch } from "../hooks/useFetch";
+import { Link } from "react-router-dom";
 
 function Artworks() {
   const { data, error, loading } = useFetch("artworks");
+  const [pageNumber, setPageNumber] = useState(1);
+
+  function handleNext() {
+    setPageNumber(pageNumber + 1);
+  }
+
+  function handlePrev() {
+    pageNumber > 1 ? setPageNumber(pageNumber - 1) : null;
+  }
   return (
     <div className="artworks">
       {error && <Error />}
@@ -11,32 +22,39 @@ function Artworks() {
       <div className="grid">
         {data?.data.map((elem) => {
           return (
-            <div className="flex" key={elem.id}>
-              <img
-                srcSet={`
+            <Link to={`${elem.id}`} key={elem.id}>
+              <div className="flex">
+                <img
+                  srcSet={`
                 https://www.artic.edu/iiif/2/${elem.image_id}/full/600,/0/default.jpg 1200w,
                 https://www.artic.edu/iiif/2/${elem.image_id}/full/400,/0/default.jpg 820w,
                         https://www.artic.edu/iiif/2/${elem.image_id}/full/200,/0/default.jpg 400w`}
-                src={`https://www.artic.edu/iiif/2/${elem.image_id}/full/400,/0/default.jpg`}
-                alt={elem.title}
-              />
-              <div>
-                <div className="art_box">
-                  <p className="title">
-                    {elem.title}
-                    {elem.artist_title && (
-                      <span className="artist_name">
-                        {" "}
-                        - {elem.artist_title}
-                      </span>
-                    )}
-                  </p>
-                  <p className="category"> {elem.artwork_type_title}</p>
+                  src={`https://www.artic.edu/iiif/2/${elem.image_id}/full/400,/0/default.jpg`}
+                  alt={elem.title}
+                />
+                <div>
+                  <div className="art_box">
+                    <p className="title">
+                      {elem.title}
+                      {elem.artist_title && (
+                        <span className="artist_name">
+                          {" "}
+                          - {elem.artist_title}
+                        </span>
+                      )}
+                    </p>
+                    <p className="category"> {elem.artwork_type_title}</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
           );
         })}
+        {/* <div className="pagination">
+          <button onClick={handlePrev}>Previous page</button>
+          <input type="text" value={pageNumber} readOnly />
+          <button onClick={handleNext}>Next</button>
+        </div> */}
       </div>
     </div>
   );
