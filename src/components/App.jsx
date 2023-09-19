@@ -14,11 +14,10 @@ function App() {
     <div className="app">
       <Navigation />
       <Routes>
-        <Route path={"/"} element={<Home prop={"this is a prop"}></Home>} />
+        <Route path={"/"} element={<Home />} />
         <Route path={"/about"} element={<About />} />
         <Route path={"/artworks"} element={<Artworks />}></Route>
         <Route path={"/artworks/:id"} element={<Details></Details>} />
-
         <Route path={"/exhibitions"} element={<Exhibitions />} />
         <Route path={"/artists"} element={<Artists />} />
         <Route path={"/*"} element={<NotFound />} />

@@ -5,14 +5,18 @@ import Loader from "../components/loader";
 
 function Details({ param }) {
   const { id } = useParams();
-  console.log(id);
-  const { data, error, loading } = useFetch(`artworks/${id}`);
+  const [{ data }, error, loading] = useFetch(`artworks/${id}`);
   return (
     <div>
       {loading && <Loader />}
-      {data && console.log(data)}
       {error && <Error />}
-      <h1>Art id = {param}</h1>
+      {data && (
+        <div className="details">
+          <img src="" alt={data.title} />
+          <p>{data.title}</p>
+          <p>{data.category}</p>
+        </div>
+      )}
     </div>
   );
 }

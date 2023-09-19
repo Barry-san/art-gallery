@@ -70,3 +70,14 @@
 .pagination input {
     width: 30px;
 }
+
+.not_found {
+    font-family: sintony, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    height: 100%;
+    background-color: red;
+}
