@@ -5,16 +5,20 @@ import Loader from "../components/loader";
 
 function Details({ param }) {
   const { id } = useParams();
-  const [{ data }, error, loading] = useFetch(`artworks/${id}`);
+  const { data, error, loading } = useFetch(`artworks/${id}`);
   return (
     <div>
       {loading && <Loader />}
       {error && <Error />}
+      {data && console.log(data)}
       {data && (
         <div className="details">
-          <img src="" alt={data.title} />
-          <p>{data.title}</p>
-          <p>{data.category}</p>
+          <img
+            src={`${data.config.iiif_url}/${data.data.image_id}/full/843,/0/default.jpg`}
+            alt={data.data.title}
+          />
+          <p>{data.data.title}</p>
+          <p dangerouslySetInnerHTML={{ __html: data.data.description }}></p>
         </div>
       )}
     </div>
