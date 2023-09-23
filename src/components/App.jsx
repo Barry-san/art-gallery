@@ -4,7 +4,7 @@ import Navigation from "./navigation/navigation";
 import Artworks from "../pages/artworks";
 import Exhibitions from "../pages/exhibitons";
 import Artists from "../pages/artists";
-import About from "../ui/about";
+import About from "../pages/about";
 import NotFound from "./NotFound";
 import { Routes, Route } from "react-router-dom";
 import Details from "../pages/details";
