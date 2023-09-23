@@ -1,20 +1,10 @@
-import { useState } from "react";
 import Error from "../components/error";
 import Loader from "../components/loader";
 import { useFetch } from "../hooks/useFetch";
 import { Link } from "react-router-dom";
 
 function Artworks() {
-  const { data, error, loading } = useFetch("artworks");
-  const [pageNumber, setPageNumber] = useState(1);
-
-  function handleNext() {
-    setPageNumber(pageNumber + 1);
-  }
-
-  function handlePrev() {
-    pageNumber > 1 ? setPageNumber(pageNumber - 1) : null;
-  }
+  const { data, error, loading } = useFetch("/artworks");
   return (
     <div className="artworks">
       {error && <Error />}
@@ -50,11 +40,6 @@ function Artworks() {
             </div>
           );
         })}
-        {/* <div className="pagination">
-          <button onClick={handlePrev}>Previous page</button>
-          <input type="text" value={pageNumber} readOnly />
-          <button onClick={handleNext}>Next</button>
-        </div> */}
       </div>
     </div>
   );

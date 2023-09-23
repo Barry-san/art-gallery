@@ -30,7 +30,11 @@ function About() {
             </a>
           </li>
           <li>
-            <a href="https://twitter.com/barry9ja" target="_blank">
+            <a
+              href="https://twitter.com/barry9ja"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Twitter
             </a>
           </li>

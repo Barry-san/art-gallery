@@ -1,8 +1,9 @@
 import Loader from "../components/loader";
+import Error from "../components/error";
 import { useFetch } from "../hooks/useFetch";
 
 function Artists() {
-  const { data, error, loading } = useFetch("agents");
+  const { data, error, loading } = useFetch("/agents");
 
   return (
     <div className="artists">

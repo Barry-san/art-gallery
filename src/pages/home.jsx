@@ -1,8 +1,8 @@
 // import { } from "/art_gallery.svg";
 import { useNavigate } from "react-router-dom";
 
-function Home({ prop }) {
-  console.log(prop);
+function Home() {
+  console.log();
   const navigator = useNavigate();
   function handleClick() {
     navigator("/artworks");
@@ -18,8 +18,8 @@ function Home({ prop }) {
         <p>
           Fully imerse youself in a curated collection of art from the acclaimed
           Art institute of Chicago, and bring out the <em>Artsy</em> in you.
-          Whether you're a seasoned art lover, or just starting to explore, we
-          have something for everyone.
+          Whether you&apos;re a seasoned art lover, or just starting to explore,
+          we have something for everyone.
         </p>
       </div>
       <div className="acreditation">

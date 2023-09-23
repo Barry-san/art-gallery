@@ -1,11 +1,12 @@
-import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
 import Error from "../components/error";
 import Loader from "../components/loader";
 
-function Details({ param }) {
-  const { id } = useParams();
-  const { data, error, loading } = useFetch(`artworks/${id}`);
+function Details() {
+  const location = useLocation();
+  console.log(location);
+  const { data, error, loading } = useFetch(location.pathname);
   return (
     <div>
       {loading && <Loader />}
@@ -21,8 +22,7 @@ function Details({ param }) {
           <p className="author">{data.data.artist_title}</p>
           <div className="art_details">
             <p>
-              <span className="">Category</span> :{" "}
-              {...data.data.category_titles}
+              <span className="">Category</span> : {data.data.category_titles}
             </p>
             <p>
               <span className="">Place of origin</span> :{" "}

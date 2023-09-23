@@ -1,10 +1,10 @@
-import React from "react";
 import Error from "../components/error";
 import Loader from "../components/loader";
 import { useFetch } from "../hooks/useFetch";
 
 function Exhibitions() {
-  const { data, error, loading } = useFetch("exhibitions");
+  const { data, error, loading } = useFetch("/exhibitions");
+  console.log(data);
   return (
     <div className="artworks">
       {error && <Error />}
