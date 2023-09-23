@@ -1,4 +1,5 @@
 import "../App.css";
+import React from "react";
 import Home from "../pages/home";
 import Navigation from "./navigation/navigation";
 import Artworks from "../pages/artworks";
