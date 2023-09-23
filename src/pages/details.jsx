@@ -15,10 +15,27 @@ function Details({ param }) {
         <div className="details">
           <img
             src={`${data.config.iiif_url}/${data.data.image_id}/full/843,/0/default.jpg`}
-            alt={data.data.title}
+            alt={data.data.thumbnail.alt_text}
           />
-          <p>{data.data.title}</p>
-          <p dangerouslySetInnerHTML={{ __html: data.data.description }}></p>
+          <h2 className="title">{data.data.title} </h2>
+          <p className="author">{data.data.artist_title}</p>
+          <div className="art_details">
+            <p>
+              <span className="">Category</span> :{" "}
+              {...data.data.category_titles}
+            </p>
+            <p>
+              <span className="">Place of origin</span> :{" "}
+              {data.data.place_of_origin}
+            </p>
+            <p>
+              <span className="">Dimensions</span> : {data.data.dimensions}
+            </p>
+            <p dangerouslySetInnerHTML={{ __html: data.data.description }}></p>
+            <p>
+              <span className="">History</span> : {data.data.provenance_text}
+            </p>
+          </div>
         </div>
       )}
     </div>

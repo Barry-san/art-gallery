@@ -22,8 +22,8 @@ function Artworks() {
       <div className="grid">
         {data?.data.map((elem) => {
           return (
-            <Link to={`${elem.id}`} key={elem.id}>
-              <div className="flex">
+            <div className="flex" key={elem.id}>
+              <Link to={`${elem.id}`}>
                 <img
                   srcSet={`
                 https://www.artic.edu/iiif/2/${elem.image_id}/full/600,/0/default.jpg 1200w,
@@ -46,8 +46,8 @@ function Artworks() {
                     <p className="category"> {elem.artwork_type_title}</p>
                   </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </div>
           );
         })}
         {/* <div className="pagination">
