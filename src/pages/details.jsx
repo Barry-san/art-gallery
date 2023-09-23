@@ -5,7 +5,6 @@ import Loader from "../components/loader";
 
 function Details() {
   const location = useLocation();
-  console.log(location);
   const { data, error, loading } = useFetch(location.pathname);
   return (
     <div>
@@ -15,8 +14,12 @@ function Details() {
       {data && (
         <div className="details">
           <img
-            src={`${data.config.iiif_url}/${data.data.image_id}/full/843,/0/default.jpg`}
-            alt={data.data.thumbnail.alt_text}
+            src={
+              data.image_id
+                ? `${data.config.iiif_url}/${data.data.image_id}/full/843,/0/default.jpg`
+                : data.data.image_url
+            }
+            alt={data.data.thumbnail?.alt_text}
           />
           <h2 className="title">{data.data.title} </h2>
           <p className="author">{data.data.artist_title}</p>
@@ -32,9 +35,6 @@ function Details() {
               <span className="">Dimensions</span> : {data.data.dimensions}
             </p>
             <p dangerouslySetInnerHTML={{ __html: data.data.description }}></p>
-            <p>
-              <span className="">History</span> : {data.data.provenance_text}
-            </p>
           </div>
         </div>
       )}
