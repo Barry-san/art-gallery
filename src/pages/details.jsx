@@ -14,11 +14,7 @@ function Details() {
       {data && (
         <div className="details">
           <img
-            src={
-              data.image_id
-                ? `${data.config.iiif_url}/${data.data.image_id}/full/843,/0/default.jpg`
-                : data.data.image_url
-            }
+            src={`${data.config.iiif_url}/${data.data.image_id}/full/843,/0/default.jpg`}
             alt={data.data.thumbnail?.alt_text}
           />
           <h2 className="title">{data.data.title} </h2>
