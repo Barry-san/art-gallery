@@ -1,8 +1,14 @@
 export function navigation() {
   const navMenu = document.querySelector(".navlinks");
+  navMenu.getAttribute("aria-expanded") == "false"
+    ? handleOpen()
+    : handleClose();
+}
 
-  let open = navMenu.getAttribute("aria-expanded");
-  open === "false"
-    ? navMenu.setAttribute("aria-expanded", "true")
-    : navMenu.setAttribute("aria-expanded", "false");
+export function handleOpen() {
+  document.querySelector(".navlinks").setAttribute("aria-expanded", "true");
+}
+
+export function handleClose() {
+  document.querySelector(".navlinks").setAttribute("aria-expanded", "false");
 }
