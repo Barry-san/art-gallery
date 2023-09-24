@@ -5,22 +5,19 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-collapse: collapse;
     font-family: Sintony, sans-serif;
 }
-
-
 
 .logo {
     font-family: Sintony, sans-serif;
     font-size: 1rem;
     color: #000;
-
 }
 
 .navlinks {
     display: flex;
     gap: 1rem;
+    z-index: 100;
 }
 
 .navlinks>a {
@@ -65,36 +62,32 @@ nav {
     nav {
         position: sticky;
         top: 0;
+        max-width: 100%;
         backdrop-filter: blur(1rem);
     }
 
     .navlinks {
         flex-direction: column;
         background-color: whitesmoke;
-        width: 60%;
-        position: fixed;
+        position: absolute;
+        height: 100vh;
         top: 0;
-        right: 0;
-        height: 100dvh;
-        padding-top: 30%;
+        right: 0px;
+        width: 60%;
+        padding-top: 40%;
         padding-inline: 1rem;
-        transition: transform .5s ease;
         border-inline: solid black 1px;
     }
 
-
-
     [aria-expanded="false"] {
-        transform: translateX(100%);
+        display: none;
     }
 
     [aria-expanded="true"] {
-        transform: translateX(0);
+        display: flex;
     }
 
     .navToggle {
         visibility: visible;
     }
-
-
 }
