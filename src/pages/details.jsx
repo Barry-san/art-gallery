@@ -30,8 +30,11 @@ function Details() {
             <p>
               <span className="">Dimensions</span> : {data.data.dimensions}
             </p>
-            <p dangerouslySetInnerHTML={{ __html: data.data.description }}></p>
           </div>
+          <div
+            className="art_description"
+            dangerouslySetInnerHTML={{ __html: data.data.description }}
+          ></div>
         </div>
       )}
     </div>
