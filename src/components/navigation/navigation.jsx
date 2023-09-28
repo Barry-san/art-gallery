@@ -3,7 +3,7 @@ import { navigation, handleClose } from "../../utils/DOM/menu";
 
 function Navigation() {
   return (
-    <nav onBlur={handleClose}>
+    <nav>
       <Link to={"/"}>
         <span className="logo">Artsy</span>
       </Link>

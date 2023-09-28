@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 function About() {
   return (
     <div>
       <div className="about">
-        <h1 className="title">About Artsy!</h1>
+        <h2 className="title">About Artsy!</h2>
         <p>
           Artsy is a project born from my interest in coding, and a desire to
           build interactive and dynamic user interfaces using the React.js
@@ -40,12 +41,24 @@ function About() {
             <li>React.js - Declarative UI library</li>
             <li>Yarn - package manager</li>
             <li>Git & Github - Version control</li>
-            <li></li>
           </ul>
         </div>
       </div>
       <div className="about_links">
         <ul>
+          <p>Navigation</p>
+          <Link to={"/artworks"}>
+            <li>Artworks</li>
+          </Link>
+          <Link to={"/exhibitions"}>
+            <li>Exhibitions</li>
+          </Link>
+          <Link to={"About"}>
+            <li>About</li>
+          </Link>
+        </ul>
+        <ul>
+          <p>Contact</p>
           <li>
             <a
               href="http://github.com/barry-san"

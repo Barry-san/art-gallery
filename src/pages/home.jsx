@@ -6,14 +6,15 @@ function Home() {
   const navigator = useNavigate();
   function handleClick() {
     navigator("/artworks");
-    console.log("button has been clicked");
   }
   return (
     <div className="home">
-      <h1>Artsy!</h1>
-      <button className="explore-btn" onClick={handleClick}>
-        Explore
-      </button>
+      <div className="hero">
+        <h1>Artsy!</h1>
+        <button className="explore-btn" onClick={handleClick}>
+          Explore
+        </button>
+      </div>
       <div className="description">
         <p>
           Fully imerse youself in a curated collection of art from the acclaimed
@@ -23,7 +24,7 @@ function Home() {
         </p>
       </div>
       <div className="acreditation">
-        <p>powered by</p>{" "}
+        <p>powered by</p>
         <img src="/art_gallery.svg" alt="the art institute of chicago" />
       </div>
     </div>

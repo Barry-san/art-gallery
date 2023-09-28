@@ -1,0 +1,38 @@
+.explore-btn {
+    background-color: white;
+    border: solid black 1px;
+    padding: .25rem 1rem;
+    font-size: .50em;
+}
+
+.home {
+    display: grid;
+    gap: 1rem;
+}
+
+.hero {
+    font-family: Sintony, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 1rem;
+    padding: 1rem;
+    justify-content: center;
+    font-size: min(4rem, 10vw);
+}
+
+
+@media screen and (min-width: 800px) {
+    .home {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-content: center;
+        height: 90svh;
+    }
+
+    .hero {
+        order: 2;
+        border-left: solid 1px black;
+    }
+}
