@@ -55,7 +55,6 @@ nav {
     visibility: hidden;
     border: solid black 1px;
     background-color: white;
-    mix-blend-mode: difference;
 }
 
 @media (max-width:720px) {
@@ -63,7 +62,7 @@ nav {
         position: sticky;
         top: 0;
         max-width: 100%;
-        backdrop-filter: blur(1rem);
+        background-color: white;
     }
 
     .navlinks {
@@ -72,19 +71,20 @@ nav {
         position: absolute;
         height: 100vh;
         top: 0;
-        right: 0px;
+        left: 0px;
         width: 60%;
         padding-top: 40%;
         padding-inline: 1rem;
         border-inline: solid black 1px;
+        transition: .5s;
     }
 
     [aria-expanded="false"] {
-        display: none;
+        transform: translateX(-100%);
     }
 
     [aria-expanded="true"] {
-        display: flex;
+        transform: translateX(0);
     }
 
     .navToggle {

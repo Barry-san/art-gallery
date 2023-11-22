@@ -2,7 +2,6 @@
 import { useNavigate } from "react-router-dom";
 
 function Home() {
-  console.log();
   const navigator = useNavigate();
   function handleClick() {
     navigator("/artworks");
