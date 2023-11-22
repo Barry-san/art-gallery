@@ -39,7 +39,7 @@ function About() {
               selection of artworks from different eras, styles, and artists.
             </li>
             <li>React.js - Declarative UI library</li>
-            <li>Yarn - package manager</li>
+            <li>CSS3 - Styling </li>
             <li>Git & Github - Version control</li>
           </ul>
         </div>

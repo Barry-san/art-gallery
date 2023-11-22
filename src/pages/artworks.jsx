@@ -22,6 +22,7 @@ function Artworks() {
                   src={`https://www.artic.edu/iiif/2/${elem.image_id}/full/400,/0/default.jpg`}
                   alt={elem.title}
                 />
+
                 <div>
                   <div className="art_box">
                     <p className="title">

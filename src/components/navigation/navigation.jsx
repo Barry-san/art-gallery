@@ -3,7 +3,7 @@ import { navigation, handleClose } from "../../utils/DOM/menu";
 
 function Navigation() {
   return (
-    <nav>
+    <nav onBlurCapture={handleClose}>
       <Link to={"/"}>
         <span className="logo">Artsy</span>
       </Link>
@@ -17,7 +17,6 @@ function Navigation() {
       <div className="navlinks" aria-expanded="false">
         <Link to={"/artworks"}>Artworks</Link>
         <Link to={"/exhibitions"}>Exhibitions</Link>
-        {/* <Link to={"/artists"}>Artists</Link> */}
         <Link to={"/about"}>About</Link>
       </div>
     </nav>

@@ -35,9 +35,6 @@ p {
     border-radius: 1rem;
 }
 
-.artist_name {
-    text-transform: none;
-}
 
 @media screen and (max-idth:720px) {
     .title {
